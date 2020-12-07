@@ -1,0 +1,25 @@
+Secret message is:
+"Docker is easy"
+
+Terminal 1:
+
+PS C:\Users\User1> docker run -it --name looper devopsdockeruh/exec_bash_exercise
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+
+Terminal 2:
+
+PS C:\Users\User1> docker exec -it looper bash
+root@9ea23a986be5:/usr/app# tail -f ./logs.txt
+"Docker is easy"
+Mon, 07 Dec 2020 10:35:57 GMT
+Mon, 07 Dec 2020 10:36:00 GMT
+Mon, 07 Dec 2020 10:36:03 GMT
+Mon, 07 Dec 2020 10:36:06 GMT
+Secret message is:
+"Docker is easy"
+Mon, 07 Dec 2020 10:36:12 GMT
+Mon, 07 Dec 2020 10:36:15 GMT
+Mon, 07 Dec 2020 10:36:18 GMT
+Mon, 07 Dec 2020 10:36:21 GMT
