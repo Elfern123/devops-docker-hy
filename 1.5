@@ -1,0 +1,15 @@
+Outside the container:
+
+PS C:\Users\User1> docker run -it --name testi2 ubuntu:16.04 sh -c "echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website;"
+Input website:
+helsinki.fi
+Searching..
+curl: (6) Could not resolve host: http
+
+Inside the container: 
+
+apt-get update
+apt-get install -y curl
+
+I know this should work, but for some reason it does not. It seems like either the " or ' characters are not working properly in the script-part with Windows, or the // in the address.
+I tried the address with escaping (////) but it did not work, and different combinations of " and ' did not either.
