@@ -1,0 +1,33 @@
+Dockerfile
+
+FROM ubuntu:16.04 
+
+
+RUN apt-get update && apt-get install -y curl
+
+WORKDIR /mydir
+COPY skripti.sh .
+RUN chmod +x skripti.sh
+
+ENTRYPOINT [ "/bin/bash" ]
+
+CMD [ "./skripti.sh" ]
+
+
+Console:
+
+PS C:\users\user1\documents\dockeri> docker build -t curler .
+[+] Building 0.4s (10/10) FINISHED
+
+PS C:\users\user1\documents\dockeri> docker run -it curler
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+
