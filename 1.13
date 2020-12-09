@@ -1,0 +1,14 @@
+Dockerfile
+
+FROM openjdk
+USER root
+
+COPY / .
+RUN ./mvnw package
+EXPOSE 8080/tcp
+CMD java -jar ./target/docker-example-1.1.3.jar
+
+Console
+
+PS C:\users\user1\documents\dockeri3> docker run -p 8080:8080 53b
+
