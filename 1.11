@@ -1,0 +1,20 @@
+FROM ubuntu
+USER root
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt install -y nodejs
+COPY / .
+RUN npm install 
+EXPOSE 8000/tcp
+CMD npm start
+
+Console:
+
+PS C:\Users\User1\documents\dockeri2> docker run -v "c:/users/user1/documents/dockeri2/logs.txt:/logs.txt" -p 8000:8000 8dc
+
+Logs:
+
+
+12/9/2020, 8:34:21 AM: Connection received in root
+
+
