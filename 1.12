@@ -1,0 +1,36 @@
+Dockerfile backend
+
+FROM ubuntu
+USER root
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt install -y nodejs
+RUN node -v && npm -v
+COPY / .
+RUN npm install 
+EXPOSE 5000/tcp
+CMD API_URL=http://localhost:8000 npm start
+
+Dockerfile frontend
+
+FROM ubuntu
+USER root
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt install -y nodejs
+COPY / .
+RUN npm install 
+EXPOSE 8000/tcp
+CMD FRONT_URL=http://localhost:5000 npm start
+
+Console 1:
+
+PS C:\users\user1\documents\dockeri> docker run -p 5000:5000 344
+
+
+Console 2:
+
+PS C:\Users\User1\documents\dockeri2> docker run -v "c:/users/user1/documents/dockeri2/logs.txt:/logs.txt" -p 8000:8000 c69
+
+
+
