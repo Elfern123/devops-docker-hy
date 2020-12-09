@@ -1,0 +1,10 @@
+https://hub.docker.com/r/elfern/simple-python/tags?page=1&ordering=last_updated
+
+Dockerfile
+
+FROM python:3
+WORKDIR /usr/src/app
+
+CMD [ "/bin/bash" ]
+
+docker run -it elfern/simple-python
